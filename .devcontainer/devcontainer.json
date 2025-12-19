@@ -1,49 +1,55 @@
 {
-  "name": "BudgetTracker",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
-  ],
-  "workspaceFolder": "/workspace",
-  "remoteUser": "vscode",
-  "updateRemoteUserUID": true,
-  "containerEnv": {
-    "GIT_CONFIG_GLOBAL": "/tmp/.gitconfig"
-  },
-  "initializeCommand": "git config --global core.filemode false",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-python.black-formatter",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss",
-        "dsznajder.es7-react-js-snippets",
-        "alexcvzz.vscode-sqlite",
-        "github.copilot-chat"
-      ],
-      "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.linting.enabled": true,
-        "python.linting.pylintEnabled": true,
-        "python.formatting.provider": "black",
-        "editor.formatOnSave": true,
-        "[python]": {
-          "editor.defaultFormatter": "ms-python.black-formatter"
-        },
-        "[javascript]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "[javascriptreact]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "name": "BudgetTracker",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "workspaceFolder": "/workspace",
+    "remoteUser": "vscode",
+    "updateRemoteUserUID": true,
+    "containerEnv": {
+        "GIT_CONFIG_GLOBAL": "/home/vscode/.gitconfig"
+    },
+    "initializeCommand": "git config --global core.filemode false",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss",
+                "dsznajder.es7-react-js-snippets",
+                "alexcvzz.vscode-sqlite",
+                "github.copilot-chat",
+                "github.copilot",
+                "github.vscode-github-actions"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.formatting.provider": "black",
+                "editor.formatOnSave": true,
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter"
+                },
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[javascriptreact]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                }
+            }
         }
-      }
-    }
-  },
-  "forwardPorts": [8000, 3000, 3001],
-  "postCreateCommand": "bash -c 'dos2unix /workspace/.devcontainer/setup.sh 2>/dev/null || sed -i \"s/\\r$//\" /workspace/.devcontainer/setup.sh; bash /workspace/.devcontainer/setup.sh'"
+    },
+    "forwardPorts": [
+        8000,
+        3000,
+        3001
+    ],
+    "postCreateCommand": "bash -c 'dos2unix /workspace/.devcontainer/setup.sh 2>/dev/null || sed -i \"s/\\r$//\" /workspace/.devcontainer/setup.sh; bash /workspace/.devcontainer/setup.sh'"
 }
