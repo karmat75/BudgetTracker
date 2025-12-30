@@ -25,6 +25,7 @@ RUN apt-get update && apt-get upgrade -y && \
     git-all \
     xz-utils \
     libglu1-mesa \
+    clang cmake ninja-build pkg-config libgtk-3-dev \
     libc6:amd64 libstdc++6:amd64 lib32z1 libbz2-1.0:amd64 && \
     rm -rf /var/lib/apt/lists/*
 
