@@ -26,7 +26,7 @@ class _MainPageState extends State<MainPage> {
             ),
             const SizedBox(height: 20),
             Text(
-              'Willkommen bei Budget Tracker',
+              'Willkommen',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: 10),
